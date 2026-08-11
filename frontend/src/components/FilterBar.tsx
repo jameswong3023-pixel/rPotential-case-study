@@ -1,24 +1,45 @@
-const RANK_MODES = ['readiness', 'value']
+const SECTIONS: [string, string][] = [
+  ['board', 'Board'],
+  ['enterprise', 'Enterprise'],
+  ['department', 'Departmental'],
+  ['function', 'Functional'],
+  ['role', 'Role'],
+]
+
+const ARCHETYPES = ['capacity', 'growth', 'risk']
+
+export type Filters = {
+  department: string
+  section: string
+  archetype: string
+  hideReviewed: boolean
+}
+
+export const EMPTY_FILTERS: Filters = {
+  department: '',
+  section: '',
+  archetype: '',
+  hideReviewed: false,
+}
+
+const selectClass =
+  'rounded-md border border-border bg-background px-2 py-1.5 text-sm'
 
 export function FilterBar({
   departments,
-  scope,
-  rankBy,
-  onScopeChange,
-  onRankByChange,
+  filters,
+  onChange,
 }: {
   departments: string[]
-  scope: string
-  rankBy: string
-  onScopeChange: (value: string) => void
-  onRankByChange: (value: string) => void
+  filters: Filters
+  onChange: (filters: Filters) => void
 }) {
   return (
     <div className="flex flex-wrap items-center gap-2">
       <select
-        value={scope}
-        onChange={(e) => onScopeChange(e.target.value)}
-        className="rounded-md border border-border bg-background px-3 py-2 text-sm"
+        value={filters.department}
+        onChange={(e) => onChange({ ...filters, department: e.target.value })}
+        className={selectClass}
       >
         <option value="">All departments</option>
         {departments.map((d) => (
@@ -28,16 +49,39 @@ export function FilterBar({
         ))}
       </select>
       <select
-        value={rankBy}
-        onChange={(e) => onRankByChange(e.target.value)}
-        className="rounded-md border border-border bg-background px-3 py-2 text-sm"
+        value={filters.section}
+        onChange={(e) => onChange({ ...filters, section: e.target.value })}
+        className={selectClass}
       >
-        {RANK_MODES.map((m) => (
-          <option key={m} value={m}>
-            Ranked by {m}
+        <option value="">All levels</option>
+        {SECTIONS.map(([id, label]) => (
+          <option key={id} value={id}>
+            {label}
           </option>
         ))}
       </select>
+      <select
+        value={filters.archetype}
+        onChange={(e) => onChange({ ...filters, archetype: e.target.value })}
+        className={selectClass}
+      >
+        <option value="">All archetypes</option>
+        {ARCHETYPES.map((a) => (
+          <option key={a} value={a}>
+            {a}
+          </option>
+        ))}
+      </select>
+      <label className="flex cursor-pointer items-center gap-1.5 text-sm text-muted-foreground">
+        <input
+          type="checkbox"
+          checked={filters.hideReviewed}
+          onChange={(e) =>
+            onChange({ ...filters, hideReviewed: e.target.checked })
+          }
+        />
+        Hide reviewed
+      </label>
     </div>
   )
 }
