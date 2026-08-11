@@ -19,7 +19,10 @@ app = FastAPI(lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    # localhost and 127.0.0.1 are different origins to the browser; allow
+    # both so the app works regardless of which loopback the dev server
+    # is opened on.
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
