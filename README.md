@@ -149,9 +149,82 @@ Use them for general sensibility rather than copying specific components.
 
 ## Notes from the candidate
 
-<!-- Fill this in before you submit:
-     1. Bugs found: fixed / left, and why.
-     2. Where you stopped, and one thing you deliberately did not build.
-     3. Roughly how the time was spent.
-     4. How you used AI tools, including one example where you rejected,
-        changed, or overrode a suggestion — or say that it didn't happen. -->
+### Setup issues encountered
+
+- `uv sync` crashed on my machine with `EXCEPTION_ILLEGAL_INSTRUCTION` (a CPU
+  compatibility issue in the uv binary, not this repo). Workaround: a plain
+  venv — `python -m venv .venv`, then
+  `.venv/Scripts/python -m pip install "fastapi>=0.110.0" "sqlmodel>=0.0.16" "uvicorn[standard]>=0.27.0"`,
+  then `.venv/Scripts/python -m uvicorn app.main:app --reload`.
+- On Windows, Vite bound only to the IPv6 loopback and connections were
+  refused; `npm run dev -- --host 127.0.0.1` fixes it.
+- The schema changed (new columns), so if you have a `backend/uop_library.db`
+  from an earlier run, delete it and restart the backend to re-seed.
+
+### Bugs found
+
+Fixed:
+
+- **Backend — combining filters silently dropped one.** The `scope` filter in
+  `routes.py` rebuilt the query from scratch, discarding the `section` filter.
+- **Backend — department filtering was exact-match against messy labels**, so
+  "Information Technology" never matched the `IT` filter and "supply chain
+  ops" never matched "Supply Chain". Labels are now normalized at seed time
+  (raw label kept) and filtering uses the normalized column.
+- **Frontend — every card linked to `/uops/:id`, which had no route.**
+  Clicking any card gave a blank page. There is now a detail view.
+- **Frontend — the Priorities filter was a decoy**: it collected state that
+  was never used anywhere. Removed rather than retrofitted with meaning.
+- **Frontend — the scope dropdown was hardcoded** and didn't match the data
+  (no "Quality", no way to reach the lowercase variants). It is now driven by
+  `GET /departments`.
+- **Frontend — ranking coerced nulls to zero**, so unassessed UoPs silently
+  sank to the bottom as if they were worthless. They are now grouped and
+  labeled "Not scored". Value ranking also regex-parsed "$18–26M" strings in
+  the browser; the parsing now happens once, server-side, into numeric fields.
+- **Frontend — null rendering**: "Readiness: " with nothing after it,
+  dangling "·" separators, empty value slots. Explicit empty states now.
+- **Review endpoint was one-way** — you could mark reviewed but never undo it.
+  It now toggles.
+
+Found and deliberately not fixed:
+
+- **One record's workforce impact sums to 115%** (`uop_b502`). That is a
+  pipeline error, and the UI flags it as a data caveat instead of silently
+  renormalizing — executives should not be taught to trust numbers the
+  pipeline got wrong.
+- **`generated_at` is stored timezone-naive** in SQLite. Fixing it means a
+  migration for no user-visible gain in this prototype.
+- **Review/shortlist state is global**, not per-user. Correct scope for a
+  single-executive prototype; first thing to revisit for real usage.
+
+### Where I stopped
+
+I stopped after the editorial design pass. The one thing I deliberately did
+not build: an export/print view of the board shortlist (a one-page memo of
+the final two or three picks). It is the natural next step, but it is a
+feature on top of a working flow rather than part of the core triage problem,
+and the time budget was better spent finishing the table, shortlist, and
+detail views properly.
+
+### Roughly how the time was spent
+
+<!-- PERSONALIZE: adjust to your actual hours -->
+- ~30 min: reading the code, running it, finding bugs before touching anything
+- ~45 min: backend fixes and the seed-time data layer
+- ~1.5 h: triage table, shortlist + compare, detail view
+- ~45 min: visual design pass
+- ~30 min: proposal, design notes, this section
+
+### How I used AI tools
+
+I used Cursor's agent for most of the implementation, working in planned
+checkpoints: I had it read the codebase and inventory the bugs first, agreed
+on a written plan (proposal → bug fixes → feature → design pass), and
+reviewed the diff at each checkpoint before committing myself.
+
+One example of overriding it: the agent recommended making git commits itself
+as it went. I rejected that and kept commits manual at each checkpoint —
+since the commit history is part of what is being reviewed, I wanted to
+verify each diff before it became history rather than approve it
+retroactively.
