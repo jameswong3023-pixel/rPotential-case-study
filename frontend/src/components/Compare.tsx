@@ -20,14 +20,14 @@ function CompareColumn({
   return (
     <div className="flex flex-col rounded-lg border border-border">
       <div className="border-b border-border p-4">
-        <p className="text-xs uppercase tracking-wide text-indigo-500">
+        <p className="text-xs uppercase tracking-wide text-accent">
           {[uop.department_norm ?? 'Unclassified', uop.role]
             .filter(Boolean)
             .join(' · ')}
         </p>
         <Link
           to={`/uops/${uop.id}`}
-          className="mt-1 block font-semibold hover:underline"
+          className="mt-1 block font-serif text-lg font-medium leading-snug hover:underline"
         >
           {uop.name}
         </Link>
@@ -156,7 +156,9 @@ export function Compare() {
       <Link to="/" className="text-sm text-muted-foreground hover:underline">
         &larr; Back to library
       </Link>
-      <h1 className="mt-4 text-2xl font-semibold">Board shortlist</h1>
+      <h1 className="mt-4 font-serif text-3xl font-medium tracking-tight">
+        Board shortlist
+      </h1>
       <p className="mt-1 text-sm text-muted-foreground">
         Side-by-side comparison of the opportunities you plan to bring to the
         board.

@@ -84,33 +84,42 @@ function Library() {
 
   return (
     <div className="mx-auto max-w-6xl p-8 pb-24">
-      <div className="mb-2 flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-semibold">UoP Library</h1>
+      <header className="border-b-2 border-foreground pb-4">
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+          Meridian Industrial Group · AI opportunity portfolio
+        </p>
+        <div className="mt-1 flex flex-wrap items-end justify-between gap-4">
+          <h1 className="font-serif text-4xl font-medium tracking-tight">
+            Unit of Potential Library
+          </h1>
           <p className="text-sm text-muted-foreground">
-            Meridian Industrial Group · {uops.length} units of potential
+            {uops.length} opportunities · {shortlisted.length}/3 shortlisted
           </p>
         </div>
+      </header>
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border py-3">
         <FilterBar
           departments={departments}
           filters={filters}
           onChange={setFilters}
         />
+        <p
+          className="text-xs text-muted-foreground"
+          title={RELEVANCE_EXPLANATION}
+        >
+          Ranked by board relevance — 60% value · 40% readiness
+        </p>
       </div>
-      <p className="mb-4 text-xs text-muted-foreground">
-        {RELEVANCE_EXPLANATION}
-      </p>
-
       {actionError && (
-        <p className="mb-3 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800">
+        <p className="mt-4 rounded-md border border-amber-300 bg-amber-100/60 px-3 py-2 text-sm text-amber-900">
           {actionError}
         </p>
       )}
-      {loading && <p className="text-muted-foreground">Loading...</p>}
-      {error && <p className="text-red-600">Error: {error}</p>}
+      {loading && <p className="mt-4 text-muted-foreground">Loading...</p>}
+      {error && <p className="mt-4 text-red-700">Error: {error}</p>}
 
       {!loading && !error && (
-        <>
+        <div className="mt-4">
           <TriageTable
             scored={scored}
             unscored={unscored}
@@ -125,7 +134,7 @@ function Library() {
               No UoPs match the current filters.
             </p>
           )}
-        </>
+        </div>
       )}
 
       <ShortlistTray

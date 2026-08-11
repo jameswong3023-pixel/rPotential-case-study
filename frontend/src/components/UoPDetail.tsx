@@ -97,7 +97,7 @@ export function UoPDetail() {
     return (
       <div className="p-8">
         <p className="text-red-600">Error: {error ?? 'UoP not found'}</p>
-        <Link to="/" className="text-sm text-indigo-600 underline">
+        <Link to="/" className="text-sm text-accent underline">
           Back to library
         </Link>
       </div>
@@ -113,12 +113,12 @@ export function UoPDetail() {
 
       <div className="mt-6 flex items-start justify-between gap-6">
         <div>
-          <p className="text-xs uppercase tracking-wide text-indigo-500">
+          <p className="text-xs uppercase tracking-wide text-accent">
             {[uop.department_norm ?? 'Unclassified', uop.role]
               .filter(Boolean)
               .join(' · ')}
           </p>
-          <h1 className="mt-1 text-3xl font-semibold leading-tight">
+          <h1 className="mt-1 font-serif text-4xl font-medium leading-tight tracking-tight">
             {uop.name}
           </h1>
           <div className="mt-3 flex flex-wrap gap-2">
@@ -130,7 +130,7 @@ export function UoPDetail() {
               </Badge>
             )}
             {uop.shortlisted && (
-              <Badge className="border-indigo-200 bg-indigo-50 text-indigo-700">
+              <Badge className="border-accent/30 bg-accent/10 text-accent">
                 Shortlisted
               </Badge>
             )}
@@ -203,7 +203,7 @@ export function UoPDetail() {
         <div className="md:col-span-3">
           <p className="text-sm leading-relaxed">{uop.desc}</p>
           {uop.back_desc && (
-            <p className="mt-4 border-l-2 border-indigo-200 pl-4 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 border-l-2 border-accent/40 pl-4 font-serif text-base italic leading-relaxed text-muted-foreground">
               {uop.back_desc}
             </p>
           )}
@@ -216,7 +216,7 @@ export function UoPDetail() {
               <ul className="mt-2 space-y-1.5 text-sm">
                 {uop.metrics.map((m) => (
                   <li key={m} className="flex gap-2">
-                    <span className="text-indigo-400">·</span>
+                    <span className="text-accent">·</span>
                     {m}
                   </li>
                 ))}

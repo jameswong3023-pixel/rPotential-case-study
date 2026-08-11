@@ -54,7 +54,7 @@ function ReadinessCell({ readiness }: { readiness: number | null }) {
       <span className="w-6 text-right tabular-nums">{readiness}</span>
       <div className="h-1.5 w-12 rounded-sm bg-muted">
         <div
-          className="h-full rounded-sm bg-indigo-500"
+          className="h-full rounded-sm bg-accent"
           style={{ width: `${readiness}%` }}
         />
       </div>
@@ -173,7 +173,7 @@ function Row({
           }
           className={
             uop.shortlisted
-              ? 'text-indigo-600'
+              ? 'text-accent'
               : 'text-muted-foreground/40 hover:text-muted-foreground'
           }
         >
@@ -205,7 +205,7 @@ export function TriageTable({
   return (
     <table className="w-full border-collapse">
       <thead>
-        <tr className="border-b-2 border-foreground/20 text-xs uppercase tracking-wider text-muted-foreground">
+        <tr className="border-b border-foreground/60 text-xs uppercase tracking-wider text-muted-foreground">
           <th className="w-8 px-2 py-2 text-right font-medium">#</th>
           <th className="px-2 py-2 text-left font-medium">Opportunity</th>
           <th className="px-2 py-2 text-left font-medium">Department</th>

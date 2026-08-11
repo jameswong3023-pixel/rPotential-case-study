@@ -1,20 +1,31 @@
 import type { Config } from 'tailwindcss'
 
+// Editorial palette: warm paper background, near-black ink, hairline warm
+// borders, and a single deep-blue accent. Semantic colors (amber warnings,
+// emerald reviewed, impact segments) come from the default palette.
 const config: Config = {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['Newsreader', 'Georgia', 'serif'],
+      },
       colors: {
-        border: 'hsl(214.3 31.8% 91.4%)',
-        background: 'hsl(0 0% 100%)',
-        foreground: 'hsl(222.2 84% 4.9%)',
+        border: 'hsl(38 14% 86%)',
+        background: 'hsl(42 30% 97%)',
+        foreground: 'hsl(24 12% 11%)',
         muted: {
-          DEFAULT: 'hsl(210 40% 96.1%)',
-          foreground: 'hsl(215.4 16.3% 46.9%)',
+          DEFAULT: 'hsl(40 22% 92%)',
+          foreground: 'hsl(28 8% 42%)',
         },
         primary: {
-          DEFAULT: 'hsl(222.2 47.4% 11.2%)',
-          foreground: 'hsl(210 40% 98%)',
+          DEFAULT: 'hsl(24 12% 11%)',
+          foreground: 'hsl(42 30% 97%)',
+        },
+        accent: {
+          DEFAULT: 'hsl(221 65% 40%)',
+          foreground: 'hsl(0 0% 100%)',
         },
       },
       borderRadius: {
