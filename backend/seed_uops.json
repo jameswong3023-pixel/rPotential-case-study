@@ -1,0 +1,696 @@
+{
+  "company": "Meridian Industrial Group",
+  "uops": [
+    {
+      "id": "uop_e101",
+      "uop_num": 1,
+      "section": "enterprise",
+      "name": "Shift plant quality inspection to AI-first with human escalation",
+      "desc": "Reconfigure visual inspection across 14 plants from human-primary to AI-primary with human oversight — 620 inspectors shift from per-part review to exception handling and supplier coaching.",
+      "back_desc": "The highest-visibility workforce decision in the portfolio. Vision models handle conforming parts; inspectors specialize in root-cause and supplier development.",
+      "role": "VP Quality",
+      "department": "Quality",
+      "value_band": "$18–26M",
+      "archetype": "capacity",
+      "readiness": 58,
+      "impact": {
+        "nc": 10,
+        "aug": 45,
+        "tf": 30,
+        "rd": 15
+      },
+      "metrics": [
+        "620 inspectors impacted",
+        "40% → 85% AI-screened volume",
+        "$61K average fully-loaded cost per inspector"
+      ],
+      "sources": [
+        {
+          "label": "Plant operations review, Q1 2026",
+          "url": null
+        },
+        {
+          "label": "Inspection throughput export",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T09:12:00Z"
+    },
+    {
+      "id": "uop_e102",
+      "uop_num": 2,
+      "section": "enterprise",
+      "name": "Close the AI tooling gap between staff engineers and contract engineering",
+      "desc": "Meridian's 2,400 staff engineers have full copilot access; 3,100 contract engineers operate restricted. Same drawings, different tools, diverging cycle times — capability amplification, not headcount reduction.",
+      "back_desc": "Engineering leadership sees 25–40% documented productivity spread between the two populations on comparable change orders.",
+      "role": "Chief Engineer",
+      "department": "Engineering",
+      "value_band": "$22–35M",
+      "archetype": "growth",
+      "readiness": 71,
+      "impact": {
+        "nc": 25,
+        "aug": 60,
+        "tf": 10,
+        "rd": 5
+      },
+      "metrics": [
+        "3,100 contract engineers affected",
+        "25–40% productivity spread",
+        "9-week average change-order cycle"
+      ],
+      "sources": [
+        {
+          "label": "Engineering productivity study, 2025",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T09:40:00Z"
+    },
+    {
+      "id": "uop_e103",
+      "uop_num": 3,
+      "section": "enterprise",
+      "name": "Enterprise AI literacy and adoption program",
+      "desc": "Adoption of approved AI tools sits at 19% of eligible employees. A structured literacy program with role-specific playbooks raises effective adoption — a prerequisite for most of this portfolio.",
+      "back_desc": "Every UoP below assumes people actually use the tools. Today four of five don't.",
+      "role": "Chief People Officer",
+      "department": "Entire business",
+      "value_band": null,
+      "archetype": "growth",
+      "readiness": null,
+      "impact": null,
+      "metrics": [
+        "19% current adoption",
+        "44,000 eligible employees",
+        "Playbooks for 60 role families"
+      ],
+      "sources": [
+        {
+          "label": "Tooling adoption dashboard",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T10:05:00Z"
+    },
+    {
+      "id": "uop_e104",
+      "uop_num": 4,
+      "section": "enterprise",
+      "name": "Consolidate regional supply planning into one AI-augmented planning desk with senior planners handling exceptions across North America, EMEA, and APAC",
+      "desc": "Quarterly planning runs in parallel across three regions with 34 planners. An agent ingesting the same inputs surfaces 80% of decisions; senior planners handle regional exceptions.",
+      "back_desc": "The three regions plan the same SKUs with different spreadsheets. The desk makes exceptions the job, not the spreadsheet.",
+      "role": "SVP Supply Chain",
+      "department": "Supply Chain",
+      "value_band": "$9–14M",
+      "archetype": "capacity",
+      "readiness": 44,
+      "impact": {
+        "nc": 10,
+        "aug": 30,
+        "tf": 40,
+        "rd": 20
+      },
+      "metrics": [
+        "34 planners across 3 regions",
+        "80% of decisions agent-surfaced",
+        "11-day planning cycle → 4"
+      ],
+      "sources": [
+        {
+          "label": "S&OP maturity assessment, 2025",
+          "url": null
+        },
+        {
+          "label": "Planning calendar audit",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T10:31:00Z"
+    },
+    {
+      "id": "uop_d201",
+      "uop_num": 5,
+      "section": "department",
+      "name": "Automate three-way invoice matching in accounts payable",
+      "desc": "AP processes 70,000 invoices monthly with a 14-person exceptions team. An agent resolving 85% of match exceptions from PO, receipt, and invoice context leaves humans the genuine disputes.",
+      "back_desc": "Exception queue averages 9 days. The agent clears conforming exceptions same-day.",
+      "role": "AP Manager",
+      "department": "AP / Finance",
+      "value_band": "$2.1–3.4M",
+      "archetype": "capacity",
+      "readiness": 74,
+      "impact": {
+        "nc": 15,
+        "aug": 40,
+        "tf": 30,
+        "rd": 15
+      },
+      "metrics": [
+        "70K invoices/month",
+        "85% of exceptions agent-resolvable",
+        "9-day exception queue → same-day"
+      ],
+      "sources": [
+        {
+          "label": "Shared services benchmark, 2026",
+          "url": null
+        },
+        {
+          "label": "AP exceptions queue export",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T11:02:00Z"
+    },
+    {
+      "id": "uop_d202",
+      "uop_num": 6,
+      "section": "department",
+      "name": "Generate first-draft variance narratives in FP&A",
+      "desc": "FP&A spends the first four days of each close writing variance narratives. An agent drafting from the ledger and prior commentary cuts narrative time 70%, pointing analysts at drivers instead.",
+      "back_desc": "Narratives are the close's critical path. Drafting is the part nobody misses.",
+      "role": "FP&A Director",
+      "department": "Finance",
+      "value_band": "$0.8–1.3M",
+      "archetype": "capacity",
+      "readiness": 61,
+      "impact": {
+        "nc": 20,
+        "aug": 55,
+        "tf": 20,
+        "rd": 5
+      },
+      "metrics": [
+        "4 days of close on narratives",
+        "70% drafting time reduction",
+        "23 recurring report packs"
+      ],
+      "sources": [
+        {
+          "label": "Close calendar review, April 2026",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T11:29:00Z"
+    },
+    {
+      "id": "uop_d203",
+      "uop_num": 7,
+      "section": "department",
+      "name": "Screening and scheduling agent for high-volume hourly hiring",
+      "desc": "Talent acquisition screens 160,000 hourly applications yearly across 14 plants. An agent handling screening, scheduling, and reminders cuts time-to-interview from 9 days to 2.",
+      "back_desc": "Plants lose candidates to faster competitors in the first 72 hours. Speed is the whole game.",
+      "role": "TA Director",
+      "department": "Human Resources",
+      "value_band": "$1.4–2.2M",
+      "archetype": "capacity",
+      "readiness": 65,
+      "impact": {
+        "nc": 20,
+        "aug": 45,
+        "tf": 25,
+        "rd": 10
+      },
+      "metrics": [
+        "160K applications/year",
+        "9-day time-to-interview → 2",
+        "31% candidate drop-off in first 72h"
+      ],
+      "sources": [
+        {
+          "label": "TA funnel metrics, 2025",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T11:58:00Z"
+    },
+    {
+      "id": "uop_d204",
+      "uop_num": 8,
+      "section": "department",
+      "name": "Agent-assisted dispute resolution in customer care",
+      "desc": "Care handles 42,000 billing and warranty disputes monthly. An agent proposing resolution packages within policy raises same-day resolution from 55% to a projected 84%.",
+      "back_desc": "Reps spend most of a dispute hunting context across five systems. The agent brings the context to the rep.",
+      "role": "Customer Care Director",
+      "department": "Customer Care",
+      "value_band": "$3.2–4.8M",
+      "archetype": "growth",
+      "readiness": 68,
+      "impact": {
+        "nc": 15,
+        "aug": 55,
+        "tf": 20,
+        "rd": 10
+      },
+      "metrics": [
+        "42K disputes/month",
+        "55% → 84% same-day resolution",
+        "5 systems per dispute today"
+      ],
+      "sources": [
+        {
+          "label": "Care operations dashboard",
+          "url": null
+        },
+        {
+          "label": "Dispute aging report, Q1 2026",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T12:24:00Z"
+    },
+    {
+      "id": "uop_d205",
+      "uop_num": 9,
+      "section": "department",
+      "name": "Automate freight audit and carrier claims in logistics",
+      "desc": "Logistics audits 30,000 freight bills monthly by sampling 8%. An agent auditing 100% recovers overbilling the sample misses and files carrier claims automatically.",
+      "back_desc": "Sampling was a labor constraint, not a strategy. Full audit changes the recovery math.",
+      "role": "Logistics Manager",
+      "department": "supply chain ops",
+      "value_band": "$1.1–1.9M",
+      "archetype": "capacity",
+      "readiness": 63,
+      "impact": {
+        "nc": 25,
+        "aug": 50,
+        "tf": 15,
+        "rd": 10
+      },
+      "metrics": [
+        "30K freight bills/month",
+        "8% audited today → 100%",
+        "1.8% estimated overbilling rate"
+      ],
+      "sources": [
+        {
+          "label": "Freight spend cube, FY25",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T12:50:00Z"
+    },
+    {
+      "id": "uop_d206",
+      "uop_num": 10,
+      "section": "department",
+      "name": "First-draft marketing and product content across brand teams",
+      "desc": "Marketing produces ~1,900 first-draft assets yearly across four brands. A generative pass with brand guardrails cuts first-draft time 60% and frees the team for campaign strategy.",
+      "back_desc": "The bottleneck is never the idea. It's the fourth revision of the first draft.",
+      "role": "Brand Operations Lead",
+      "department": "Marketing",
+      "value_band": "$0.9–1.5M",
+      "archetype": "capacity",
+      "readiness": 81,
+      "impact": {
+        "nc": 30,
+        "aug": 55,
+        "tf": 10,
+        "rd": 5
+      },
+      "metrics": [
+        "1,900 assets/year",
+        "60% first-draft time reduction",
+        "4 brand systems consolidated to 1"
+      ],
+      "sources": [
+        {
+          "label": "Marketing ops review, Q4 2025",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T13:17:00Z"
+    },
+    {
+      "id": "uop_f301",
+      "uop_num": 11,
+      "section": "function",
+      "name": "Replace tier-1 IT helpdesk with a conversational agent",
+      "desc": "Helpdesk handles 3,600 tickets weekly, 68% password resets and access requests. A conversational agent resolves those autonomously, freeing the desk for real incident response.",
+      "back_desc": "Tier-1 volume is dominated by requests with deterministic resolutions. That's agent territory.",
+      "role": "IT Service Desk Lead",
+      "department": "IT",
+      "value_band": "$2.4–3.6M",
+      "archetype": "capacity",
+      "readiness": 72,
+      "impact": {
+        "nc": 10,
+        "aug": 30,
+        "tf": 35,
+        "rd": 25
+      },
+      "metrics": [
+        "3,600 tickets/week",
+        "68% deterministic volume",
+        "22-minute average handle time"
+      ],
+      "sources": [
+        {
+          "label": "IT operations briefing, Q1 2026",
+          "url": null
+        },
+        {
+          "label": "Ticket volume export",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T13:44:00Z"
+    },
+    {
+      "id": "uop_f302",
+      "uop_num": 12,
+      "section": "function",
+      "name": "AI-assisted regulatory submission drafting",
+      "desc": "Regulatory affairs drafts 340 agency submissions yearly. An agent assembling first drafts from prior submissions and current dossiers cuts drafting effort 50% with reviewer sign-off unchanged.",
+      "back_desc": "Submissions reuse 70% of their structure. Nobody should be retyping the reusable 70%.",
+      "role": "Regulatory Affairs Lead",
+      "department": "Regulatory Affairs",
+      "value_band": "$1.3–2.0M",
+      "archetype": "risk",
+      "readiness": 38,
+      "impact": {
+        "nc": 20,
+        "aug": 60,
+        "tf": 15,
+        "rd": 5
+      },
+      "metrics": [
+        "340 submissions/year",
+        "50% drafting effort reduction",
+        "70% structural reuse across filings"
+      ],
+      "sources": [
+        {
+          "label": "Submission cycle analysis, 2025",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T14:10:00Z"
+    },
+    {
+      "id": "uop_f303",
+      "uop_num": 13,
+      "section": "function",
+      "name": "Automate warranty claims adjudication",
+      "desc": "Warranty adjudicates 18,000 claims monthly against policy matrices. An agent adjudicating the 75% of claims that are policy-deterministic leaves adjusters the judgment calls.",
+      "back_desc": "Deterministic claims don't need adjusters. They need consistent policy application at machine speed.",
+      "role": "Warranty Operations Lead",
+      "department": "Quality",
+      "value_band": "$2.8–4.1M",
+      "archetype": "capacity",
+      "readiness": 41,
+      "impact": {
+        "nc": 15,
+        "aug": 35,
+        "tf": 30,
+        "rd": 20
+      },
+      "metrics": [
+        "18K claims/month",
+        "75% policy-deterministic",
+        "6-day average adjudication → same-day"
+      ],
+      "sources": [
+        {
+          "label": "Warranty ops review, Feb 2026",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T14:36:00Z"
+    },
+    {
+      "id": "uop_f304",
+      "uop_num": 14,
+      "section": "function",
+      "name": "Churn-signal agent for the renewals desk",
+      "desc": "Renewal reps discover at-risk service contracts too late. An agent watching telemetry, service tickets, and org changes flags risk 90 days out with a suggested play.",
+      "back_desc": "Every saved contract this year was saved by someone noticing early. The agent makes noticing systematic.",
+      "role": "Renewals Lead",
+      "department": "customer care",
+      "value_band": "$4.2–6.0M",
+      "archetype": "growth",
+      "readiness": 59,
+      "impact": {
+        "nc": 30,
+        "aug": 55,
+        "tf": 10,
+        "rd": 5
+      },
+      "metrics": [
+        "$180M renewable base",
+        "90-day early warning",
+        "12% churn on unmanaged accounts"
+      ],
+      "sources": [
+        {
+          "label": "Renewals pipeline review, Q2 2026",
+          "url": null
+        },
+        {
+          "label": "Churn postmortems, FY25",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T15:01:00Z"
+    },
+    {
+      "id": "uop_f305",
+      "uop_num": 15,
+      "section": "function",
+      "name": "Triage supplier inspection reports with a vision-language agent",
+      "desc": "Supplier quality engineers read 3,400 inspection reports weekly, most conforming. An agent passes conforming reports and routes the 8% with anomalies with findings highlighted.",
+      "back_desc": null,
+      "role": "Supplier Quality Engineer",
+      "department": null,
+      "value_band": "$0.8–1.2M",
+      "archetype": "capacity",
+      "readiness": 36,
+      "impact": {
+        "nc": 20,
+        "aug": 50,
+        "tf": 20,
+        "rd": 10
+      },
+      "metrics": [
+        "3,400 reports/week",
+        "8% anomaly rate",
+        "92% auto-passable volume"
+      ],
+      "sources": [],
+      "generated_at": "2026-05-15T15:27:00Z"
+    },
+    {
+      "id": "uop_f306",
+      "uop_num": 16,
+      "section": "function",
+      "name": "Demand-forecast agent for inventory analysts",
+      "desc": "Inventory analysts spend ~40% of their week on routine demand reforecasting. An agent handling the routine SKUs focuses analysts on volatile lines and promotions.",
+      "back_desc": "Routine SKUs reforecast themselves given clean signals. Analysts belong on the volatile 20%.",
+      "role": "Inventory Analyst",
+      "department": "Supply Chain",
+      "value_band": "$1.6–2.4M",
+      "archetype": "capacity",
+      "readiness": 70,
+      "impact": {
+        "nc": 25,
+        "aug": 55,
+        "tf": 15,
+        "rd": 5
+      },
+      "metrics": [
+        "40% of analyst week on routine reforecasts",
+        "12,000 active SKUs",
+        "80/20 volatility split"
+      ],
+      "sources": [
+        {
+          "label": "Sourcing org review, Q1 2026",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T15:52:00Z"
+    },
+    {
+      "id": "uop_r401",
+      "uop_num": 17,
+      "section": "role",
+      "name": "Reskill tier-1 support techs into incident response specialists",
+      "desc": "With tier-1 automated, 11 displaced techs can be reskilled into incident response, where the backlog is five months. Net-zero workforce impact, higher value per person.",
+      "back_desc": "The pipeline problem and the backlog problem solve each other.",
+      "role": "Tier-1 Support Technician",
+      "department": "Information Technology",
+      "value_band": null,
+      "archetype": "capacity",
+      "readiness": 58,
+      "impact": {
+        "nc": 0,
+        "aug": 20,
+        "tf": 70,
+        "rd": 10
+      },
+      "metrics": [
+        "11 techs reskilled",
+        "5-month incident backlog",
+        "Net-zero headcount impact"
+      ],
+      "sources": [
+        {
+          "label": "IT operations briefing, Q1 2026",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T16:18:00Z"
+    },
+    {
+      "id": "uop_r402",
+      "uop_num": 18,
+      "section": "role",
+      "name": "Augment maintenance planners with a parts-and-history agent",
+      "desc": "Maintenance planners assemble work packets from six systems. An agent pre-assembling parts lists, history, and lockout steps cuts packet time from 50 minutes to 12.",
+      "back_desc": "Planners are search engines today. The agent gives them back the planning.",
+      "role": "Maintenance Planner",
+      "department": "Plant Operations",
+      "value_band": "$1.0–1.6M",
+      "archetype": "capacity",
+      "readiness": 62,
+      "impact": {
+        "nc": 20,
+        "aug": 65,
+        "tf": 10,
+        "rd": 5
+      },
+      "metrics": [
+        "50-minute packets → 12",
+        "6 systems per packet",
+        "140 planners across plants"
+      ],
+      "sources": [
+        {
+          "label": "Maintenance excellence review",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T16:44:00Z"
+    },
+    {
+      "id": "uop_r403",
+      "uop_num": 19,
+      "section": "role",
+      "name": "Apply content-review agents to dealer marketing compliance",
+      "desc": "Compliance reviews 900 dealer marketing pieces monthly for claims violations. An agent pre-screening against the claims matrix clears the 80% that are clean.",
+      "back_desc": null,
+      "role": "Marketing Compliance Reviewer",
+      "department": null,
+      "value_band": "$0.4–0.7M",
+      "archetype": "risk",
+      "readiness": 47,
+      "impact": {
+        "nc": 25,
+        "aug": 55,
+        "tf": 15,
+        "rd": 5
+      },
+      "metrics": [
+        "900 pieces/month",
+        "80% clean rate",
+        "3-day review SLA → same-day"
+      ],
+      "sources": [],
+      "generated_at": "2026-05-15T17:09:00Z"
+    },
+    {
+      "id": "uop_r404",
+      "uop_num": 20,
+      "section": "role",
+      "name": "Spend-analysis agent for supply chain analysts",
+      "desc": "Supply chain analysts spend ~60% of each sourcing cycle on spend analysis and supplier benchmarking. An agent ingesting the spend cube produces the analysis pack; analysts negotiate.",
+      "back_desc": "The analysis pack is table stakes. Negotiation leverage is the job.",
+      "role": "Supply Chain Analyst",
+      "department": "Supply Chain",
+      "value_band": "$1.5–2.3M",
+      "archetype": "capacity",
+      "readiness": 70,
+      "impact": {
+        "nc": 15,
+        "aug": 60,
+        "tf": 15,
+        "rd": 10
+      },
+      "metrics": [
+        "60% of cycle on analysis",
+        "$2.1B addressable spend",
+        "9 sourcing waves/year"
+      ],
+      "sources": [
+        {
+          "label": "Sourcing org review, Q1 2026",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T17:35:00Z"
+    },
+    {
+      "id": "uop_b501",
+      "uop_num": 21,
+      "section": "board",
+      "name": "Add an AI workforce impact review to quarterly board cadence",
+      "desc": "Directors currently see AI progress as project status. A quarterly workforce-impact review — capacity created, roles redesigned, redeployment outcomes — makes the transition governable.",
+      "back_desc": "What the board measures, the org manages. Today the board measures pilots.",
+      "role": "Board Secretary",
+      "department": "Entire business",
+      "value_band": null,
+      "archetype": "risk",
+      "readiness": null,
+      "impact": {
+        "nc": 100,
+        "aug": 0,
+        "tf": 0,
+        "rd": 0
+      },
+      "metrics": [
+        "4 reviews/year",
+        "Covers all active UoPs",
+        "Standing agenda item"
+      ],
+      "sources": [
+        {
+          "label": "Governance calendar, 2026",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T18:01:00Z"
+    },
+    {
+      "id": "uop_b502",
+      "uop_num": 22,
+      "section": "board",
+      "name": "Stand up an AI governance committee with executive ownership",
+      "desc": "No single owner exists for AI risk appetite, tooling policy, or workforce transition standards. A board-chartered committee with a named executive owner closes the gap.",
+      "back_desc": "Every UoP in this portfolio eventually routes a decision through a committee that doesn't exist yet.",
+      "role": "General Counsel",
+      "department": "Entire business",
+      "value_band": null,
+      "archetype": "risk",
+      "readiness": null,
+      "impact": {
+        "nc": 60,
+        "aug": 30,
+        "tf": 15,
+        "rd": 10
+      },
+      "metrics": [
+        "1 committee, 5 executives",
+        "Charter covers 22 active UoPs",
+        "Quarterly risk appetite review"
+      ],
+      "sources": [
+        {
+          "label": "Governance gap assessment",
+          "url": null
+        }
+      ],
+      "generated_at": "2026-05-15T18:22:00Z"
+    }
+  ]
+}
