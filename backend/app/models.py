@@ -28,9 +28,17 @@ class UoP(SQLModel, table=True):
     # Chain", "AP / Finance", "Entire business"). Not normalized. Null when
     # the pipeline couldn't classify.
     department: Optional[str] = None
+    # Canonical department label derived from `department` at seed time.
+    # Filtering and grouping should use this; `department` is kept as the
+    # raw pipeline output.
+    department_norm: Optional[str] = None
     # Annualized value band, pre-formatted by the pipeline ("$1.2–2.1M").
     # Null when the primary value model is strategic (no dollar band).
     value_band: Optional[str] = None
+    # Numeric bounds parsed from value_band at seed time, in $M. Null when
+    # the band is missing or unparseable. Ranking uses these.
+    value_low: Optional[float] = None
+    value_high: Optional[float] = None
     archetype: Optional[str] = None  # capacity / growth / risk
     readiness: Optional[int] = None  # 0-100, null when org not yet assessed
     # Workforce impact distribution, percentages: no_change / augment /
@@ -41,6 +49,12 @@ class UoP(SQLModel, table=True):
     impact_rd: Optional[int] = None
     metrics: list = Field(default_factory=list, sa_column=Column(JSON))
     sources: list = Field(default_factory=list, sa_column=Column(JSON))
+    # Human-readable data-quality caveats detected at seed time (e.g. a
+    # workforce impact distribution that doesn't sum to 100). Surfaced in
+    # the UI rather than silently corrected.
+    data_flags: list = Field(default_factory=list, sa_column=Column(JSON))
     generated_at: datetime
     reviewed: bool = False
     reviewed_at: Optional[datetime] = None
+    # Pinned to the board shortlist (max 3, enforced by the API).
+    shortlisted: bool = False
