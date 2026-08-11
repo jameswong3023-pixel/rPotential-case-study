@@ -1,36 +1,51 @@
 import { useEffect, useState } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import type { UoP } from '@/lib/types'
-import { fetchUops } from '@/lib/api'
+import { fetchUops, fetchDepartments } from '@/lib/api'
 import { UoPCard } from '@/components/UoPCard'
+import { UoPDetail } from '@/components/UoPDetail'
 import { FilterBar } from '@/components/FilterBar'
 
 const SECTIONS: [string, string][] = [
+  ['board', 'Board'],
   ['enterprise', 'Enterprise'],
   ['department', 'Departmental'],
   ['function', 'Functional'],
   ['role', 'Role'],
-  ['board', 'Board'],
 ]
 
+// Sort descending by the rank key, pushing items the pipeline hasn't
+// assessed (null key) to the end instead of coercing them to zero.
 function rankUops(uops: UoP[], rankBy: string): UoP[] {
-  if (rankBy === 'value') {
-    const low = (band: string | null) =>
-      band ? parseFloat(band.replace(/[^0-9.]/g, ' ').trim().split(' ')[0]) : 0
-    return [...uops].sort((a, b) => low(b.value_band) - low(a.value_band))
-  }
-  return [...uops].sort(
-    (a, b) => (b.readiness as number) - (a.readiness as number),
-  )
+  const key = (u: UoP): number | null =>
+    rankBy === 'value'
+      ? u.value_low != null && u.value_high != null
+        ? (u.value_low + u.value_high) / 2
+        : null
+      : u.readiness
+  return [...uops].sort((a, b) => {
+    const ka = key(a)
+    const kb = key(b)
+    if (ka == null && kb == null) return 0
+    if (ka == null) return 1
+    if (kb == null) return -1
+    return kb - ka
+  })
 }
 
 function Library() {
   const [uops, setUops] = useState<UoP[]>([])
-  const [priorities, setPriorities] = useState<string[]>([])
+  const [departments, setDepartments] = useState<string[]>([])
   const [scope, setScope] = useState('')
   const [rankBy, setRankBy] = useState('readiness')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    fetchDepartments()
+      .then(setDepartments)
+      .catch(() => setDepartments([]))
+  }, [])
 
   useEffect(() => {
     setLoading(true)
@@ -55,10 +70,9 @@ function Library() {
           </p>
         </div>
         <FilterBar
-          priorities={priorities}
+          departments={departments}
           scope={scope}
           rankBy={rankBy}
-          onPrioritiesChange={setPriorities}
           onScopeChange={setScope}
           onRankByChange={setRankBy}
         />
@@ -96,6 +110,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Library />} />
+      <Route path="/uops/:id" element={<UoPDetail />} />
     </Routes>
   )
 }

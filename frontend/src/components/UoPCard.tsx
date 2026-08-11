@@ -9,11 +9,18 @@ const ARCHETYPE_STYLES: Record<string, string> = {
 }
 
 export function UoPCard({ uop }: { uop: UoP }) {
+  const kicker = [uop.department_norm, uop.role].filter(Boolean).join(' · ')
+  const hasImpact =
+    uop.impact_nc != null &&
+    uop.impact_aug != null &&
+    uop.impact_tf != null &&
+    uop.impact_rd != null
+
   return (
-    <Card className="transition-colors hover:border-indigo-300">
+    <Card className="h-full transition-colors hover:border-indigo-300">
       <CardHeader>
         <p className="text-xs uppercase tracking-wide text-indigo-500">
-          {uop.department} · {uop.role}
+          {kicker || 'Unclassified'}
         </p>
         <CardTitle>{uop.name}</CardTitle>
       </CardHeader>
@@ -35,11 +42,25 @@ export function UoPCard({ uop }: { uop: UoP }) {
         <p className="mt-3 text-xs uppercase tracking-wider text-muted-foreground">
           Value potential
         </p>
-        <p className="text-2xl font-bold text-indigo-600">{uop.value_band}</p>
-        <p className="mt-3 text-sm">Readiness: {uop.readiness}</p>
+        {uop.value_band ? (
+          <p className="text-2xl font-bold text-indigo-600">{uop.value_band}</p>
+        ) : (
+          <p className="text-sm text-muted-foreground">
+            Strategic — no dollar band
+          </p>
+        )}
+        <p className="mt-3 text-sm">
+          Readiness:{' '}
+          {uop.readiness != null ? (
+            uop.readiness
+          ) : (
+            <span className="text-muted-foreground">not yet assessed</span>
+          )}
+        </p>
         <p className="mt-1 text-xs text-muted-foreground">
-          Workforce: NC {uop.impact_nc} · AUG {uop.impact_aug} · TF{' '}
-          {uop.impact_tf} · RD {uop.impact_rd}
+          {hasImpact
+            ? `Workforce: NC ${uop.impact_nc} · AUG ${uop.impact_aug} · TF ${uop.impact_tf} · RD ${uop.impact_rd}`
+            : 'Workforce impact not yet assessed'}
         </p>
         {uop.sources.length > 0 && (
           <div className="mt-3 text-xs text-muted-foreground">
